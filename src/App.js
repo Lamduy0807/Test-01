@@ -4,6 +4,7 @@ import Example from './Example';
 import { useState } from 'react';
 
 //Git quản lý bằng branch, thông qua pull request conflict 1
+//Git quản lý bằng branch, thông qua pull request conflict 2
 // branch main (master/ production) -> deploy production tới user
 // branch clone/ master -> test chức năng trước khi đẩy production.
 // developer -> tạo branch từ production
