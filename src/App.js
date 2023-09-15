@@ -3,7 +3,7 @@ import './App.css';
 import Example from './Example';
 import { useState } from 'react';
 
-//Git quản lý bằng branch
+//Git quản lý bằng branch, thông qua pull request
 // branch main (master/ production) -> deploy production tới user
 // branch clone/ master -> test chức năng trước khi đẩy production.
 // developer -> tạo branch từ production
