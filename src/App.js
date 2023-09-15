@@ -1,23 +1,26 @@
 import logo from './logo.svg';
 import './App.css';
+import Example from './Example';
+import { useState } from 'react';
 
+//Git quản lý bằng branch
+// branch main (master/ production) -> deploy production tới user
+// branch clone/ master -> test chức năng trước khi đẩy production.
+// developer -> tạo branch từ production
+// login -> tạo từ production 1 branch tên là ... 123-login
+// đẩy code lên git -> tạo Merge request để merge production (cherry pick code -> clone)
+// testor -> test trên clone -> còn bug -> dev fix bug -> (hết bug) acp lên production -> testor test
+// lại trên production 1 lần nữa
 function App() {
+  const [exam, setExam] = useState("Page Home");
+   
+    const handleClick = () => {
+        console.log("click")
+        setExam("Page Account");
+    }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Example name={exam} click={handleClick}/>
     </div>
   );
 }
