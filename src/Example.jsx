@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 //props
 const Example = ({ name, click }) => {
 
-  // hàm có sẵn trong js:
+
   /**
    *  1. hàm có sẵn trong js:
    *  - Console.log()
