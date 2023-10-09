@@ -1,7 +1,13 @@
 import { MODI_INFOR, SET_INFOR } from "./types";
 
 const initialState = {
-  infors: [],
+  infors: [
+    { data: "test", time: "10:10" },
+    { data: "test", time: "10:10" },
+    { data: "test", time: "10:10" },
+    { data: "test", time: "10:10" },
+    { data: "test", time: "10:10" },
+  ],
 };
 
 const inforReducer = (state = initialState, action) => {
@@ -30,6 +36,5 @@ const inforReducer = (state = initialState, action) => {
       return state;
   }
 };
-
 
 export default inforReducer;

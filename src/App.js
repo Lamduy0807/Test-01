@@ -8,6 +8,7 @@ import Contact from "./Pages/Contact";
 import Profile from "./Pages/Profile";
 import { Provider } from "react-redux";
 import store from "./Redux/Store";
+import { QueryClient, QueryClientProvider } from "react-query";
 //Git quản lý bằng branch, thông qua pull request conflict 1
 //Git quản lý bằng branch, thông qua pull request conflict 2
 // branch main (master/ production) -> deploy production tới user
@@ -23,25 +24,27 @@ import store from "./Redux/Store";
 function App() {
   const location = useLocation();
   const [exam, setExam] = useState("Page Home");
-
+  const queryClient = new QueryClient();
   const handleClick = () => {
     console.log("click");
     setExam("Page Account");
   };
   console.log(location);
   return (
-    <Provider store={store}>
-      <div className="App">
-        <div>sad</div>
-        <>
-          <Routes key={location.pathname} location={location}>
-            <Route path="/" element={<Home />} />
-            <Route path="contact" element={<Contact />} />
-            <Route path="profile" element={<Profile />} />
-          </Routes>
-        </>
-      </div>
-    </Provider>
+    <QueryClientProvider client={queryClient}>
+      <Provider store={store}>
+        <div className="App">
+          <div>sad</div>
+          <>
+            <Routes key={location.pathname} location={location}>
+              <Route path="/" element={<Home />} />
+              <Route path="contact" element={<Contact />} />
+              <Route path="profile" element={<Profile />} />
+            </Routes>
+          </>
+        </div>
+      </Provider>
+    </QueryClientProvider>
   );
 }
 
