@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import Grid from "../Components/Grid";
+import Grid from "../../Grid";
 import axios from "axios";
 import { useMutation } from "react-query";
+import TopBar from "../../Components/TopBar";
 /**
  *
  * Redux: 3 thành phần
@@ -32,45 +33,9 @@ const Home = () => {
 
   if (mutation.isSuccess) return window.alert("Thành công!!");
 
-  return (
-    <div>
-      <div>Home</div>
-      <Link to={"contact"}>Link to contact</Link>
-
-      {/* {infors.map((infor) => {
-        return (
-          <div key={infor.id}>
-            data: {infor.data}, time: {infor.time}
-          </div>
-        );
-      })} */}
-      <input
-        type="text"
-        value={title}
-        onChange={(e) => {
-          setTitle(e.target.value);
-        }}
-        placeholder="Enter title"
-      />
-
-      <input
-        type="text"
-        value={body}
-        onChange={(e) => {
-          setBody(e.target.value);
-        }}
-        placeholder="Enter body"
-      />
-
-      <button
-        onClick={() => {
-          mutation.mutate({ title, body });
-        }}
-      >
-        submit
-      </button>
-    </div>
-  );
+  return <>
+    <TopBar />
+  </>;
 };
 
 export default Home;

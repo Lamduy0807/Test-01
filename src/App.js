@@ -1,5 +1,6 @@
 import logo from "./logo.svg";
-import "./App.css";
+// import "./App.css";
+import "./Sass/_index.scss";
 import Example from "./Example";
 import { useState } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
@@ -34,7 +35,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <Provider store={store}>
         <div className="App">
-          <div>sad</div>
+          {/* <div className="test">sad</div> */}
           <>
             <Routes key={location.pathname} location={location}>
               <Route path="/" element={<Home />} />
