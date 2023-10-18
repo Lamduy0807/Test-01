@@ -5,6 +5,7 @@ import Grid from "../../Grid";
 import axios from "axios";
 import { useMutation } from "react-query";
 import TopBar from "../../Components/TopBar";
+import HeroBlock from "../../Components/HeroBlock";
 /**
  *
  * Redux: 3 thành phần
@@ -33,9 +34,12 @@ const Home = () => {
 
   if (mutation.isSuccess) return window.alert("Thành công!!");
 
-  return <>
-    <TopBar />
-  </>;
+  return (
+    <>
+      <TopBar />
+      <HeroBlock />
+    </>
+  );
 };
 
 export default Home;
